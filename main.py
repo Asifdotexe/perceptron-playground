@@ -1,11 +1,5 @@
 """
-This file contains the code for the following:
-
-1. Perceptron gate implementation and simulation of the following gates
-    a. AND
-    b. OR
-    c. NAND
-    d. NOR
+This file contains the code for Perceptron Logic Gates Implementation
 """
 
 from typing import Callable
@@ -32,5 +26,16 @@ def perceptron(weights: list[float], bias: float) -> Callable[[list[int]],int]:
         weighted_sum = sum(weight * input_value for weight, input_value in
                            zip(weights, inputs)) + bias
         return 1 if weighted_sum > 0 else 0
-
     return perceptron_function
+
+# defining the logic gates using defined weights and bias
+logic_gates = {
+    # outputs 1 when both inputs are 1
+    "AND": perceptron(weights=[1,1], bias=-1.5),
+    # outputs 1 when either of the input is 1
+    "OR": perceptron(weights=[1,1], bias=-0.5),
+    # outputs 1 unless both inputs are 1
+    'NAND': perceptron(weights=[-1, -1], bias=1.5),
+    # outputs 1 with both inputs are 0
+    "NOR": perceptron(weights=[-1, -1], bias=0.5)
+}
