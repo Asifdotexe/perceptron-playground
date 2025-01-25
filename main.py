@@ -24,7 +24,9 @@ def perceptron(weights: list[float], bias: float) -> Callable[[list[int]],int]:
         """Computing the output for a given set of inputs.
 
         :param inputs: List of binary inputs, should contain either 0 or 1
+        :type inputs: list[int]
         :return: Binary output (0 or 1) based on weighted sum and bias.
+        :rtype: int
         """
         # weighted sum = Σ (weights[i] * input[i]) + bias
         weighted_sum = sum(weight * input_value for weight, input_value in
