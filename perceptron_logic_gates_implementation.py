@@ -57,3 +57,11 @@ def test_gates(gate_name: str, gate: Callable[[list[int]],int]) -> None:
             output = gate([input_1, input_2])
             print(f"   {input_1}    |    {input_2}    |   {output}")
     print()
+
+def main() -> None:
+    """Main function to test all the gates."""
+    for gate_name, gate in logic_gates.items():
+        test_gates(gate_name, gate)
+
+if __name__ == "__main__":
+    main()
