@@ -39,3 +39,21 @@ logic_gates = {
     # outputs 1 with both inputs are 0
     "NOR": perceptron(weights=[-1, -1], bias=0.5)
 }
+
+# creating a function to test the logic gates
+def test_gates(gate_name: str, gate: Callable[[list[int]],int]) -> None:
+    """ Test all the possible outputs of a 2-input perceptron logic gate
+
+    :param gate_name: Name of the gate
+    :type gate_name: str
+    :param gate: Function representing the logic gate
+    :type gate: Callable[[list[int]],int]
+    """
+    print(f"Testing {gate_name} gate")
+    print("Input 1 | Input 2 | Output")
+    print("---------------------------")
+    for input_1 in [0,1]:
+        for input_2 in [0,1]:
+            output = gate([input_1, input_2])
+            print(f"   {input_1}    |    {input_2}    |   {output}")
+    print()
