@@ -1,5 +1,7 @@
 """
 This file contains the code for Perceptron Logic Gates Implementation
+where we will be implementing and testing the following gates
+AND, OR, NAND, NOR
 """
 
 from typing import Callable
