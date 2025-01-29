@@ -11,7 +11,6 @@ additionally will be using matplotlib to plot those activation functions
 """
 
 import math
-import matplotlib.pyplot as plt
 
 def sigmoid_function(x: float) -> float:
     """Computes the sigmoid activation function"""
